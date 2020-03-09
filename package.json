@@ -27,8 +27,10 @@
   },
   "homepage": "https://github.com/peppequint/progressive-web-apps-1920#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
