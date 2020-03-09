@@ -6,3 +6,46 @@ body {
   font-size: 15px;
   margin: 0;
 }
+
+/* header */
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+/* tag nav */
+.navigation-tag {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  padding: 1em;
+}
+
+.navigation-tag--list {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.tag-list--item {
+  background: var(--yellow);
+  border: 2px solid var(--yellow);
+  border-radius: 1.25em;
+  color: rgba(45, 43, 47, 0.75);
+  flex: 0 0 auto;
+  font-size: .85em;
+  padding: .5em 1em;
+}
+
+.tag-list--item-active {
+  background: none;
+}
+
+.tag-list--item:not(:nth-child(1)) {
+  margin-left: 1em;
+}
+
