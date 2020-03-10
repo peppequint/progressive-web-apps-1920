@@ -13,15 +13,33 @@ app.set('view engine', 'ejs');
 app.set('views', 'public/views');
 
 app.get('/', (req, res) => {
-  fetch('https://api.football-data.org/v2/matches', {
-    headers: { 'X-Auth-Token': process.env.API_KEY }
-  })
-    .then(res => {
-      return res.json();
+  const matches = new Promise((resolve, reject) => {
+    fetch('https://api.football-data.org/v2/matches', {
+      headers: { 'X-Auth-Token': process.env.API_KEY }
     })
-    .then(data => {
-      res.render('pages/index', { data: data.matches });
-    });
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        resolve(data);
+      });
+  });
+
+  const competitions = new Promise((resolve, reject) => {
+    fetch('https://api.football-data.org/v2/competitions?plan=TIER_ONE', {
+      headers: { 'X-Auth-Token': process.env.API_KEY }
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        resolve(data);
+      });
+  });
+
+  Promise.all([matches, competitions]).then(data => {
+    res.render('pages/index', { matches: data[0].matches, competitions: data[1].competitions });
+  });
 });
 
 app.get('/match/:id', (req, res) => {

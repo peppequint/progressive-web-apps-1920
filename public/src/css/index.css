@@ -51,10 +51,17 @@ header {
   padding: 1em;
 }
 
-.match-heading {
+.container-heading {
+  align-items: center;
+  display: flex;
   margin-bottom: 1em;
   padding-left: 1em;
   position: relative;
+}
+
+.container-heading i {
+  font-size: 1em;
+  margin-right: 0.75em;
 }
 
 .match-heading::before {
@@ -66,6 +73,22 @@ header {
   width: 2px;
 }
 
+.league-heading::before {
+  background: var(--blue);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 2px;
+}
+
+.league-list,
+.match-list {
+  border-bottom: 1px solid rgba(45, 43, 47, 0.09);
+  margin-bottom: 1.5em;
+}
+
+.league,
 .match {
   background: white;
   border-radius: 1em;

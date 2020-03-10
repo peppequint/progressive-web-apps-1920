@@ -1,0 +1,10 @@
+<h2 class="container-heading league-heading"><i class="ms-Icon ms-Icon--ViewList"></i>League center</h2>
+<ul class="league-list">
+  <% competitions.forEach(competition => { %>
+  <li class="league">
+    <a href="/match/<%= competition.id %>">
+      <p class="league-name"><%= competition.name %></p>
+    </a>
+  </li>
+  <% }) %>
+</ul>
