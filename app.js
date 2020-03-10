@@ -19,7 +19,21 @@ app.get('/', (req, res) => {
     .then(res => {
       return res.json();
     })
-    .then(data => res.render('pages/index', { data: data.matches }));
+    .then(data => {
+      res.render('pages/index', { data: data.matches });
+    });
+});
+
+app.get('/match/:id', (req, res) => {
+  fetch(`https://api.football-data.org/v2/matches/${req.params.id}`, {
+    headers: { 'X-Auth-Token': process.env.API_KEY }
+  })
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      res.render('pages/match', { data: data });
+    });
 });
 
 app.listen(port, () => console.log(`Progressive Web App running on port ${port}.`));
