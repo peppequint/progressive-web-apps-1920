@@ -1,11 +1,10 @@
 <nav class="navigation navigation-competition">
   <ul class="competition-name--list">
     <li class="competition-list--item competition-list--item__active">All competitions</li>
-    <% data.forEach(match => { %>
+    <% matches.forEach(match => { %>
       <li class="competition-list--item">
         <p><%= match.competition.name %></p>
       </li>
     <% }) %>
-    <!-- competitions needs to come from the api -->
   </ul>
 </nav>

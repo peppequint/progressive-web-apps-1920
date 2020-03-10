@@ -1,6 +1,9 @@
-<h2 class="match-heading">Match center</h2>
+<h2 class="container-heading match-heading">
+  <i class="ms-Icon ms-Icon--Soccer"></i>
+  Match center
+</h2>
 <ul class="match-list">
-  <% data.forEach(match => { %>
+  <% matches.forEach(match => { %>
   <li class="match">
     <a href="/match/<%= match.id %>">
       <p class="match-team match-home--team"><%= match.homeTeam.name %></p>

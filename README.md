@@ -12,7 +12,7 @@
 ## Table of contents
 
 - [Install](#install)
-- [Concept](#concept)
+- [Wiki](#wiki)
 - [API](#api)
 - [Status](#status)
 - [Sources](#sources)
