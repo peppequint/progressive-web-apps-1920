@@ -4,8 +4,11 @@
   "description": "progressive web app project for minor web-dev",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "prestart": "npm run build:css && npm run build:js",
+    "start": "nodemon app.js",
+
+    "build:css": "node scripts/build-css.js",
+    "build:js": "node scripts/build-js.js"
   },
   "repository": {
     "type": "git",

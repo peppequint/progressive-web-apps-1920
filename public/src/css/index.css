@@ -1,0 +1,52 @@
+@import 'reset.css';
+@import 'colour.css';
+@import 'typography.css';
+
+/* header */
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+/* tag nav */
+.navigation-competition {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  padding: 1em;
+}
+
+.competition-name--list {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.competition-list--item {
+  background: var(--yellow);
+  border: 2px solid var(--yellow);
+  border-radius: 1.25em;
+  color: rgba(45, 43, 47, 0.75);
+  flex: 0 0 auto;
+  font-size: 0.85em;
+  padding: 0.5em 1em;
+}
+
+.competition-list--item__active {
+  background: none;
+}
+
+.competition-list--item:not(:nth-child(1)) {
+  margin-left: 1em;
+}
+
+/* container */
+
+.container {
+  padding: 1em;
+}
