@@ -9,10 +9,21 @@ body {
 }
 
 h1 {
-  font-size: 1.25em;
+  color: var(--dark);
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+h2 {
+  color: var(--grey);
+  font-size: 1.1em;
   font-weight: 500;
 }
 
 i {
   font-size: 1.5em;
+}
+
+p {
+  font-size: 0.9em;
 }

@@ -50,3 +50,26 @@ header {
 .container {
   padding: 1em;
 }
+
+.match-heading {
+  margin-bottom: 1em;
+  padding-left: 1em;
+  position: relative;
+}
+
+.match-heading::before {
+  background: var(--red);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 2px;
+}
+
+.match {
+  background: white;
+  border-radius: 1em;
+  box-shadow: 0 5px 15px rgba(45, 43, 47, 0.09), 0 5px 10px rgba(45, 43, 47, 0.03);
+  margin-bottom: 2em;
+  padding: 1.25em 1em;
+}
