@@ -94,5 +94,24 @@ header {
   border-radius: 1em;
   box-shadow: 0 5px 15px rgba(45, 43, 47, 0.09), 0 5px 10px rgba(45, 43, 47, 0.03);
   margin-bottom: 2em;
+  overflow: hidden;
+  position: relative;
   padding: 1.25em 1em;
+}
+
+.match-team {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25em 0em;
+}
+
+.match-away--team {
+  color: var(--grey);
+}
+
+.match-status {
+  color: var(--grey);
+  font-size: 0.8em;
+  text-transform: uppercase;
 }
