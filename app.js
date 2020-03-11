@@ -37,6 +37,20 @@ app.get('/', (req, res) => {
       });
   });
 
+  // const test = new Promise((resolve, reject) => {
+  //   fetch('https://api.football-data.org/v2/teams/18', {
+  //     headers: { 'X-Auth-Token': process.env.API_KEY }
+  //   })
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(data => {
+  //       // console.log(data);
+
+  //       resolve(data);
+  //     });
+  // });
+
   Promise.all([matches, competitions]).then(data => {
     res.render('pages/index', { matches: data[0].matches, competitions: data[1].competitions });
   });
@@ -50,7 +64,39 @@ app.get('/match/:id', (req, res) => {
       return res.json();
     })
     .then(data => {
-      res.render('pages/match', { data: data });
+      const homeTeam = data.match.homeTeam.id;
+      const awayTeam = data.match.awayTeam.id;
+      const match = data;
+
+      const home = new Promise((resolve, reject) => {
+        fetch(`https://api.football-data.org/v2/teams/${homeTeam}`, {
+          headers: { 'X-Auth-Token': process.env.API_KEY }
+        })
+          .then(res => {
+            return res.json();
+          })
+          .then(data => {
+            resolve(data);
+          });
+      });
+
+      const away = new Promise((resolve, reject) => {
+        fetch(`https://api.football-data.org/v2/teams/${awayTeam}`, {
+          headers: { 'X-Auth-Token': process.env.API_KEY }
+        })
+          .then(res => {
+            return res.json();
+          })
+          .then(data => {
+            resolve(data);
+          });
+      });
+
+      Promise.all([home, away, match]).then(data => {
+        console.log(data);
+        
+        res.render('pages/match', { home: data[0], away: data[1], match: data[2] });
+      });
     });
 });
 
