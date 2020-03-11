@@ -93,8 +93,6 @@ app.get('/match/:id', (req, res) => {
       });
 
       Promise.all([home, away, match]).then(data => {
-        console.log(data);
-        
         res.render('pages/match', { home: data[0], away: data[1], match: data[2] });
       });
     });

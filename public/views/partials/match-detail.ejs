@@ -1,1 +1,40 @@
-<h1>Init detail page</h1>
+<h2 class="container-heading detail-heading">
+  <i class="ms-Icon ms-Icon--Badge"></i>
+  <%= match.match.competition.name %>
+</h2>
+<section class="match-details">
+  <article class="match-details--team match-details--home">
+    <img class="match-details--logo" src="<%= home.crestUrl %>" alt="<%= home.name %>" />
+    <p class="match-details--name"><%= home.shortName %></p>
+  </article>
+  <article class="match-details--score">
+    <% if(match.status !== 'POSTPONED') { %> <% if(match.match.score.fullTime.homeTeam == null) { %>
+    <span>-</span>
+    <% } else { %>
+    <span><%= match.match.score.fullTime.homeTeam %></span>
+    <% } %>
+    <span>:</span>
+    <% if(match.match.score.fullTime.awayTeam == null) { %>
+    <span>-</span>
+    <% } else { %>
+    <span><%= match.match.score.fullTime.awayTeam %></span>
+    <% } %> <% } else { %>
+    <span class="match-details--status"><%= match.match.status %></span>
+    <% } %>
+  </article>
+  <article class="match-details--team match-details--away">
+    <img class="match-details--logo" src="<%= away.crestUrl %>" alt="<%= away.name %>" />
+    <p class="match-details--name"><%= away.shortName %></p>
+  </article>
+  <article class="match-venue">
+    <p class="match-venue--time"><%= match.match.utcDate %></p>
+    <p class="match-venue--stadium"><%= match.match.venue %></p>
+  </article>
+</section>
+<h2 class="container-heading odds-heading">
+  <i class="ms-Icon ms-Icon--Calculator"></i>
+  Odds
+</h2>
+<section class="match-odds">
+  <article></article>
+</section>
