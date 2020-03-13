@@ -5,7 +5,7 @@
 <p align="center">
 	Server side rendered application football betting application.
 	<br>
-	<!-- <a href="https://real-time-web-1819-pq.herokuapp.com/">Live demo</a> -->
+	Deploying to Heroku didn't work out, trying to fix it.
 </p>
 <br>
 
@@ -33,7 +33,7 @@ npm install
 # Runs build scripts and starts nodemon
 npm start
 
-# Optional: automatically watch every change that is made in a css file
+# Optional: automatically watches every change that is made in a css file
 npm run watch:css
 ```
 
@@ -44,43 +44,7 @@ The documentations of this project can be found in the Wiki of this project. To 
 
 ## API
 The API that is used for this application is from [Football Data](https://www.football-data.org/). This is a developer friendly football API, really easy and free to use. For this project the free tier package is used. This package includes 12 competitions with the fixtures, schedules and all the teams of the league with detailed information per topic. There is a maximum of 10 calls per minute. 
-In the [Wiki](#) you can read more about how the API is used.
-
-
-When a user starts the application, the following will happen on the server side.
-In order to get all the matches that are scheduled for this day, `const matches` will fetch all the matches. After all matches have been fetched, the 12 competitions are also fetched, `const competitions`. When this is done, when everything is 'promised', the data will be rendered to index.
-
-``` javascript
-app.get('/', (req, res) => {
-  const matches = new Promise((resolve, reject) => {
-    fetch('https://api.football-data.org/v2/matches', {
-      headers: { 'X-Auth-Token': process.env.API_KEY }
-    })
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        resolve(data);
-      });
-  });
-
-  const competitions = new Promise((resolve, reject) => {
-    fetch('https://api.football-data.org/v2/competitions?plan=TIER_ONE', {
-      headers: { 'X-Auth-Token': process.env.API_KEY }
-    })
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        resolve(data);
-      });
-  });
-
-  Promise.all([matches, competitions]).then(data => {
-    res.render('pages/index', { matches: data[0].matches, competitions: data[1].competitions });
-  });
-});
-```
+In the [Wiki](#https://github.com/peppequint/progressive-web-apps-1920/wiki/Server-side-rendering) you can read more about how the API is used.
 
 ## Status
 The application is still work in progress. Things that needs to be done:
