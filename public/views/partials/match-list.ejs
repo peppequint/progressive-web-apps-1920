@@ -5,7 +5,7 @@
 <ul class="match-list">
   <% matches.forEach(match => { %>
     <% if(match.status == 'POSTPONED') { %>
-    <li class="match">
+    <li class="match" data-league-name="<%= match.competition.name %>">
       <a href="/match/<%= match.id %>">
         <p class="match-team match-home--team"><%= match.homeTeam.name %> 
           <span class="match-status"><%= match.status %></span>
