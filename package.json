@@ -6,6 +6,7 @@
   "scripts": {
     "prestart": "npm run build:css && npm run build:js",
     "start": "node app.js",
+    "prebuild": "rimraf ./public/static",
     "build:css": "node ./public/scripts/build-css.js",
     "build:js": "node ./public/scripts/build-js.js",
     "watch:css": "chokidar './public/src/css/*.css' -c 'npm run build:css'"
@@ -21,7 +22,7 @@
     "ejs",
     "js",
     "rendering",
-    "templating"
+    "template"
   ],
   "author": "Peppe-Quint Boogaard",
   "license": "ISC",
