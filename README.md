@@ -3,9 +3,10 @@
 	<img align='center' src="./assets/img/screenshot-app(wip).png" height="420" />
 </div>
 <p align="center">
+	<br>
 	Server side rendered application football betting application.
 	<br>
-	Deploying to Heroku didn't work out, trying to fix it.
+	<a href="https://progressive-web-apps-1920.herokuapp.com/">Live demo</a>
 </p>
 <br>
 
