@@ -34,7 +34,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "gulp": "^4.0.2",
-    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
