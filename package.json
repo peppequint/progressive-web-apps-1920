@@ -5,11 +5,9 @@
   "main": "app.js",
   "scripts": {
     "prestart": "npm run build:css && npm run build:js",
-    "start": "nodemon app.js",
-
+    "start": "node app.js",
     "build:css": "node ./public/scripts/build-css.js",
     "build:js": "node ./public/scripts/build-js.js",
-
     "watch:css": "chokidar './public/src/css/*.css' -c 'npm run build:css'"
   },
   "repository": {
@@ -35,12 +33,12 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
     "nodemon": "^2.0.2"
   }
 }
