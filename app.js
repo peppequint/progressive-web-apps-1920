@@ -7,6 +7,8 @@ const port = process.env.PORT || 4000;
 const fetch = require('node-fetch');
 const path = require('path');
 
+const API_KEY = process.env.API_KEY;
+
 app.use(express.static(path.join(__dirname, 'public/static')));
 
 app.set('view engine', 'ejs');
