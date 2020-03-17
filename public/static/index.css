@@ -13,12 +13,6 @@ body {
   color: var(--dark);
 }
 
-@import 'reset.css';
-@import 'colour.css';
-@import 'typography.css';
-
-/* header */
-
 header {
   align-items: center;
   display: flex;
@@ -192,7 +186,6 @@ header {
   font-weight: 600;
 }
 
-
 .match-details--logo {
   max-height: 4em;
   max-width: 4em;
@@ -246,6 +239,11 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.navigation-competition::-webkit-scrollbar {
+  display: none;
+}
+
 
 :root {
   --font-body: 'Noto Sans', sans-serif;
