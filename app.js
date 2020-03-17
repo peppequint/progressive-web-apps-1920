@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'public/views'));
 app.get('/', (req, res) => {
   const matches = new Promise((resolve, reject) => {
     fetch('https://api.football-data.org/v2/matches', {
-      headers: { 'X-Auth-Token': '720619f57563476eb382a373d9764aa3' }
+      headers: { 'X-Auth-Token': API_KEY }
     })
       .then(res => {
         return res.json();
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
   const competitions = new Promise((resolve, reject) => {
     fetch('https://api.football-data.org/v2/competitions?plan=TIER_ONE', {
-      headers: { 'X-Auth-Token': '720619f57563476eb382a373d9764aa3' }
+      headers: { 'X-Auth-Token': API_KEY }
     })
       .then(res => {
         return res.json();
@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
 
 app.get('/match/:id', (req, res) => {
   fetch(`https://api.football-data.org/v2/matches/${req.params.id}`, {
-    headers: { 'X-Auth-Token': '720619f57563476eb382a373d9764aa3' }
+    headers: { 'X-Auth-Token': API_KEY }
   })
     .then(res => {
       return res.json();
@@ -70,7 +70,7 @@ app.get('/match/:id', (req, res) => {
 
       const home = new Promise((resolve, reject) => {
         fetch(`https://api.football-data.org/v2/teams/${homeTeam}`, {
-          headers: { 'X-Auth-Token': '720619f57563476eb382a373d9764aa3' }
+          headers: { 'X-Auth-Token': API_KEY }
         })
           .then(res => {
             return res.json();
@@ -82,7 +82,7 @@ app.get('/match/:id', (req, res) => {
 
       const away = new Promise((resolve, reject) => {
         fetch(`https://api.football-data.org/v2/teams/${awayTeam}`, {
-          headers: { 'X-Auth-Token': '720619f57563476eb382a373d9764aa3' }
+          headers: { 'X-Auth-Token': API_KEY }
         })
           .then(res => {
             return res.json();
