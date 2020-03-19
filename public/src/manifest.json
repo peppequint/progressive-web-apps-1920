@@ -1,0 +1,10 @@
+{
+  "name": "Football Betting Center",
+  "short_name": "FBC",
+  "theme_color": "#fafafa",
+  "background_color": "#2d2b2f",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}
