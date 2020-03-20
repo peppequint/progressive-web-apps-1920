@@ -5,8 +5,8 @@ self.addEventListener('install', e => {
   console.log('Installing sw.');
 
   e.waitUntil(
-    cache.open(CORE_CACHE_VERSION).then(cache => {
-      return caches.addAll(CORE_ASSETS).then(() => self.skipWaiting());
+    caches.open(CORE_CACHE_VERSION).then(cache => {
+      return cache.addAll(CORE_ASSETS).then(() => self.skipWaiting());
     })
   );
 });
@@ -20,5 +20,5 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   console.log('Fetching sw.');
 
-  console.log(e);
+  // e.respondWith(caches.open(CORE_CACHE_VERSION).then(cache => console.log(e.request.url)));
 });
