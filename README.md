@@ -1,6 +1,6 @@
 <div align="center">
 	<h1 align='center'>Progressive Web Apps</h1>
-	<img align='center' src="./assets/img/screenshot-app(wip).png" height="420" />
+	<img align='center' src="./assets/img/screenshot-app(wip-v2).png" height="620" />
 </div>
 <p align="center">
 	<br>
@@ -57,7 +57,7 @@ The application is still work in progress. Things that needs to be done for the 
 - [ ] Offline availability 
 - [ ] Progressive enhancement
 
-There are also other things that are more important to the teachers regarding the project. This can be found in the [Wiki](https://github.com/peppequint/progressive-web-apps-1920/wiki)
+There are also other things that are more important to the teachers regarding the project. This can be found in the [Wiki](https://github.com/peppequint/progressive-web-apps-1920/wiki).
 
 ## Sources
 - [Football data](https://www.football-data.org/)
