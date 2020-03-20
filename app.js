@@ -9,7 +9,7 @@ const path = require('path');
 
 const API_KEY = process.env.API_KEY;
 
-app.use(express.static(path.join(__dirname, 'public/static')));
+app.use(express.static(path.join(__dirname, '/public/static')));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/views'));
@@ -38,20 +38,6 @@ app.get('/', (req, res) => {
         resolve(data);
       });
   });
-
-  // const test = new Promise((resolve, reject) => {
-  //   fetch('https://api.football-data.org/v2/matches?competitions=2003', {
-  //     headers: { 'X-Auth-Token': '720619f57563476eb382a373d9764aa3' }
-  //   })
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       // console.log(data);
-
-  //       resolve(data);
-  //     });
-  // });
 
   Promise.all([matches, competitions]).then(data => {
     res.render('pages/index', { matches: data[0].matches, competitions: data[1].competitions });
