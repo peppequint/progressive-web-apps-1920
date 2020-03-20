@@ -26,3 +26,8 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.navigation-competition::-webkit-scrollbar {
+  display: none;
+}
+
