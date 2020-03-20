@@ -14,7 +14,8 @@
     "build:js": "node ./public/scripts/build-js.js",
     "build:static": "node ./public/scripts/build-static.js",
     "watch:css": "chokidar './public/src/css/*.css' -c 'npm run build:css'",
-    "watch:js": "chokidar './public/src/js/*.css' -c 'npm run build:js'"
+    "watch:js": "chokidar './public/src/js/*.js' -c 'npm run build:js'",
+    "watch:static": "chokidar './public/src/*' -c 'npm run build:static'"
   },
   "repository": {
     "type": "git",
