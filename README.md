@@ -48,12 +48,16 @@ The API that is used for this application is from [Football Data](https://www.fo
 In the [Wiki](#https://github.com/peppequint/progressive-web-apps-1920/wiki/Server-side-rendering) you can read more about how the API is used.
 
 ## Status
-The application is still work in progress. Things that needs to be done:
+The application is still work in progress. Things that needs to be done for the best performance and optimization:
+- [x] .env
+- [x] Manifest
 - [ ] Service worker
+- [ ] Caching
+- [ ] Critical render path
 - [ ] Offline availability 
 - [ ] Progressive enhancement
-- [ ] Critical render path
-- [ ] Caching
+
+There are also other things that are more important to the teachers regarding the project. This can be found in the [Wiki](https://github.com/peppequint/progressive-web-apps-1920/wiki)
 
 ## Sources
 - [Football data](https://www.football-data.org/)
