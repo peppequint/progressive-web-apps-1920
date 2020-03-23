@@ -86,4 +86,16 @@ app.get('/match/:id', (req, res) => {
     });
 });
 
+app.get('/competition/:id', (req, res) => {
+  fetch(`https://api.football-data.org/v2/competitions/${req.params.id}/standings`, {
+    headers: { 'X-Auth-Token': API_KEY }
+  })
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      res.render('pages/competition', { competition: data });
+    });
+});
+
 app.listen(port, () => console.log(`Progressive Web App running on port ${port}.`));
