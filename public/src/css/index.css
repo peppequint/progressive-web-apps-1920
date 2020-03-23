@@ -139,7 +139,6 @@ header {
 }
 
 .match-details {
-  background: white;
   border-radius: 1em;
   box-shadow: 0 5px 15px rgba(45, 43, 47, 0.09), 0 5px 10px rgba(45, 43, 47, 0.03);
   display: flex;

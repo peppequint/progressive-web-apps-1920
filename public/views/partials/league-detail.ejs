@@ -1,23 +1,31 @@
 <h2 class="container-heading detail-heading">
   <i class="ms-Icon ms-Icon--Medal"></i>
-  <% console.log(competition.standings[0].table);%>
+  <% console.log(competition);%>
   <%= competition.competition.name %>
 </h2>
 <section class="league-details">
   <table class="league-details--table">
-    <tr>
-      <th>Pos.</th>
-      <th>Team</th>
-      <th>MP</th>
-      <th>PTS</th>
-    </tr>
-    <% competition.standings[0].table.forEach(team => { %>
-    <tr>
-      <td><%= team.position %></td>
-      <td><%= team.team.name %></td>
-      <td><%= team.playedGames %></td>
-      <td><%= team.points %></td>
-    </tr>
-    <% }) %>
+    <thead>
+      <tr>
+        <th>Pos.</th>
+        <th></th>
+        <th>Team</th>
+        <th>MP</th>
+        <th>PTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% competition.standings[0].table.forEach(team => { %>
+      <tr>
+        <td><%= team.position %></td>
+        <td>
+          <img src="<%= team.team.crestUrl %>" alt="logo" />
+        </td>
+        <td><%= team.team.name %></td>
+        <td><%= team.playedGames %></td>
+        <td><%= team.points %></td>
+      </tr>
+      <% }) %>
+    </tbody>
   </table>
 </section>

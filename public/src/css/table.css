@@ -1,14 +1,22 @@
+.league-details {
+  border-top: 1px solid rgba(45, 43, 47, 0.09);
+}
+
 .league-details--table {
   border-collapse: separate;
   border-spacing: 1em;
   width: 100%;
 }
 
-.league-details--table tr:not(:first-child) {
-  height: 3em;
+.league-details--table thead tr {
+  font-size: 0.8em;
+}
+
+.league-details--table tbody tr {
+  height: 4.5em;
   border-radius: 1em;
   box-shadow: 0 5px 15px rgba(45, 43, 47, 0.09), 0 5px 10px rgba(45, 43, 47, 0.03);
-  font-size: .8em;
+  font-size: 0.8em;
   margin-bottom: 1em;
 }
 
@@ -25,10 +33,17 @@
 }
 
 .league-details--table th:last-of-type,
-.league-details--table td:last-of-type {
+.league-details--table td:last-of-type,
+.league-details--table td:nth-child(2) {
   text-align: right;
 }
 
 .league-details--table td:not(:nth-child(2)) {
   color: var(--grey);
+}
+
+.league-details--table td img {
+  max-height: 1.5em;
+  max-width: 1.5em;
+  vertical-align: middle;
 }
