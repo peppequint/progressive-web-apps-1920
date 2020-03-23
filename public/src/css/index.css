@@ -98,6 +98,15 @@ header {
 .match-list {
   border-bottom: 1px solid rgba(45, 43, 47, 0.09);
   margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  width: 100%;
+}
+
+.match-list > span {
+  color: var(--grey);
+  font-size: 1em;
+  margin: 0 auto;
+  opacity: 0.5;
 }
 
 .league,
@@ -109,6 +118,7 @@ header {
   overflow: hidden;
   position: relative;
   padding: 1.25em 1em;
+  width: 100%;
 }
 
 .match-team {

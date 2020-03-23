@@ -3,35 +3,39 @@
   Match center
 </h2>
 <ul class="match-list">
-  <% matches.forEach(match => { %>
-    <% if(match.status == 'POSTPONED') { %>
-    <li class="match" data-league-name="<%= match.competition.name %>">
-      <a href="/match/<%= match.id %>">
-        <p class="match-team match-home--team"><%= match.homeTeam.name %> 
-          <span class="match-status"><%= match.status %></span>
-        </p>
-        <p class="match-team match-away--team"><%= match.awayTeam.name %></p>
-      </a>
-    </li>
-    <% } else { %>
-    <li class="match">
-      <a href="/match/<%= match.id %>">
-        <p class="match-team match-home--team"><%= match.homeTeam.name %> 
-          <% if (match.score.fullTime.homeTeam == null) { %>
-            <span>-</span>
-          <% } else { %>
-            <span><%= match.score.fullTime.homeTeam %></span>
-          <% } %>
-        </p>
-        <p class="match-team match-away--team"><%= match.awayTeam.name %> 
-          <% if (match.score.fullTime.awayTeam == null) { %>
-            <span>-</span>
-          <% } else { %>
-            <span><%= match.score.fullTime.awayTeam %></span>
-          <% } %>
-        </p>
-      </a>
-    </li>
-    <% } %>
-  <% }) %>
+  <% if(matches === undefined || matches.length == 0) { %>
+    <span>No fixtures today</span>
+  <% } else { %>  
+    <% matches.forEach(match => { %>
+      <% if(match.status == 'POSTPONED') { %>
+      <li class="match" data-league-name="<%= match.competition.name %>">
+        <a href="/match/<%= match.id %>">
+          <p class="match-team match-home--team"><%= match.homeTeam.name %> 
+            <span class="match-status"><%= match.status %></span>
+          </p>
+          <p class="match-team match-away--team"><%= match.awayTeam.name %></p>
+        </a>
+      </li>
+      <% } else { %>
+      <li class="match">
+        <a href="/match/<%= match.id %>">
+          <p class="match-team match-home--team"><%= match.homeTeam.name %> 
+            <% if (match.score.fullTime.homeTeam == null) { %>
+              <span>-</span>
+            <% } else { %>
+              <span><%= match.score.fullTime.homeTeam %></span>
+            <% } %>
+          </p>
+          <p class="match-team match-away--team"><%= match.awayTeam.name %> 
+            <% if (match.score.fullTime.awayTeam == null) { %>
+              <span>-</span>
+            <% } else { %>
+              <span><%= match.score.fullTime.awayTeam %></span>
+            <% } %>
+          </p>
+        </a>
+      </li>
+      <% } %>
+    <% }) %>
+  <% } %>
 </ul>
