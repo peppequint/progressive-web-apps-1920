@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const compression = require('compression');
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -10,6 +11,7 @@ const path = require('path');
 const API_KEY = process.env.API_KEY;
 
 app.use(express.static(path.join(__dirname, '/public/static')));
+app.use(compression());
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/views'));
