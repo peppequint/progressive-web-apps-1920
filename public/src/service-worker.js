@@ -1,8 +1,5 @@
-import fetch from 'node-fetch';
-import { response } from 'express';
-
 const CORE_CACHE_VERSION = 'cache-storage';
-const CORE_ASSETS = ['/index.css', '/offline', '/manifest.json'];
+const CORE_ASSETS = ['/index.css', 'index.js', '/offline', '/manifest.json'];
 
 self.addEventListener('install', e => {
   console.log('Installing sw.');
