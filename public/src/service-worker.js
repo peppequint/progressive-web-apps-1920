@@ -20,8 +20,9 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   console.log('Fetching sw.');
   const request = e.request;
-
   if (request.method === 'GET' && CORE_ASSETS.includes(pathName(request.url))) {
+    e.respondWith(caches.open(CORE_CACHE_VERSION).then(cache => cache.match(e.request.url)));
+  } else if (request.method === 'GET' && request.headers.get('accept') !== null && request.headers.get('accept').indexOf('text/html') > -1) {
     e.respondWith(
       caches
         .open(CORE_CACHE_VERSION)
