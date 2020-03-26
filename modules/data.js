@@ -1,16 +1,14 @@
 require('dotenv').config();
 const fetch = require('node-fetch');
 
-const API_KEY = process.env.API_KEY;
-
 async function data(url) {
-  const apiCall = await fetch(url, {
-    headers: { 'X-Auth-Token': API_KEY }
+  const call = await fetch(url, {
+    headers: { 'X-Auth-Token': process.env.API_KEY }
   });
 
-  const receiveData = await apiCall.json();
+  const response = await call.json();
 
-  return receiveData;
+  return response;
 }
 
 module.exports = data;
