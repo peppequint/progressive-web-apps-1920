@@ -100,4 +100,8 @@ app.get('/competition/:id', (req, res) => {
     });
 });
 
+app.get('/offline', (req, res) => {
+  res.render('pages/offline');
+});
+
 app.listen(port, () => console.log(`Progressive Web App running on port ${port}.`));
