@@ -1,8 +1,8 @@
 const express = require('express');
-const compression = require('compression');
 const app = express();
-const port = process.env.PORT || 4000;
+const compression = require('compression');
 const path = require('path');
+const port = process.env.PORT || 4000;
 
 const routes = require('./routes/routes');
 
