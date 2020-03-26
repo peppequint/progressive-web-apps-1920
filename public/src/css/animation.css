@@ -1,0 +1,11 @@
+@keyframes color {
+  from {
+    color: var(--dark-grey);
+  }
+  70% {
+    color: var(--red);
+  }
+  to {
+    color: var(--yellow);
+  }
+}

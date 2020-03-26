@@ -42,6 +42,7 @@ header {
 /* container */
 
 .container {
+  height: 100%;
   padding: 1em;
 }
 
@@ -203,4 +204,31 @@ header {
 
 .match-venue p:first-child {
   margin-bottom: 0.5em;
+}
+
+.offline {
+  align-items: center;
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.offline > span {
+  align-items: center;
+  color: var(--grey);
+  display: flex;
+  font-family: var(--font-heading);
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.offline-flag {
+  animation: color 1s infinite alternate;
+  font-size: 1.25em;
+  padding-right: 1em;
+}
+
+.offline > p {
+  margin-top: 3em;
 }
