@@ -13,6 +13,7 @@
     "build:css": "node ./public/scripts/build-css.js",
     "build:js": "node ./public/scripts/build-js.js",
     "build:static": "node ./public/scripts/build-static.js",
+    "watch": "run-p watch:*",
     "watch:css": "chokidar './public/src/css/*.css' -c 'npm run build:css'",
     "watch:js": "chokidar './public/src/js/*.js' -c 'npm run build:js'",
     "watch:static": "chokidar './public/src/*' -c 'npm run build:static'"
