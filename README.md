@@ -1,6 +1,6 @@
 <div align="center">
 	<h1 align='center'>Progressive Web Apps</h1>
-	<img align='center' src="./assets/img/screenshot-app(wip-v2).png" height="620" />
+	<img align='center' src="./public/src/img/screenshot-app.png" height="620" />
 </div>
 <p align="center">
 	<br>
