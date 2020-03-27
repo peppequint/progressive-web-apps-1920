@@ -7,11 +7,8 @@ const competition = require('./../modules/competition');
 
 app
   .get('/', overview)
-
   .get('/match/:id', match)
-
   .get('/competition/:id', competition)
-
   .get('/offline', (req, res) => {
     res.render('pages/offline');
   });
