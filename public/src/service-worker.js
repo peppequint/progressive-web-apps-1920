@@ -20,14 +20,14 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   console.log('Fetching sw.');
   const request = e.request;
-  if (request.method === 'GET' && CORE_ASSETS.includes(pathName(request.url))) {
+  if (request.method === 'GET' && CORE_ASSETS.includes(path(request.url))) {
     e.respondWith(caches.open(CORE_CACHE_VERSION).then(cache => cache.match(e.request.url)));
   } else if (request.method === 'GET' && request.headers.get('accept') !== null && request.headers.get('accept').indexOf('text/html') > -1) {
     e.respondWith(
       caches
-        .open(CORE_CACHE_VERSION)
+        .open('user-cache')
         .then(cache => cache.match(e.request.url))
-        .then(res => (res ? res : cloneReq(e.request, 'html-cache')))
+        .then(res => (res ? res : cloneRequest(e.request, 'user-cache')))
         .catch(e => {
           return caches.open(CORE_CACHE_VERSION).then(cache => cache.match('/offline'));
         })
@@ -35,19 +35,21 @@ self.addEventListener('fetch', e => {
   }
 });
 
-function cloneReq(req, cache) {
+// cloning visited directories in cache
+function cloneRequest(req, cache) {
   return fetch(req).then(res => {
     if (!res.ok) {
-      throw new TypeError('Bad response');
+      console.error('Response is not ok!');
     }
-
-    const clone = response.clone();
+    console.log(res);
+    // debugger;
+    const clone = res.clone();
     caches.open(cache).then(cache => cache.put(req, clone));
-    return response;
+    return res;
   });
 }
 
-function pathName(request) {
+function path(request) {
   const url = new URL(request);
   return url.pathname;
 }
