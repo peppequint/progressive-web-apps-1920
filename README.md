@@ -32,10 +32,16 @@ cd progressive-web-apps-1920
 npm install
 
 # Runs build scripts and starts nodemon
-npm start
+npm run dev
+```
 
-# Optional: automatically watches every change that is made in a css file
-npm run watch:css
+### NPM scripts
+```shell
+# Evokes different build scripts
+npm run build
+
+# Watches live changes
+npm run watch
 ```
 
 A configured `.env` with an `API_KEY` is needed	to run this application. The API is free to use. 
@@ -51,15 +57,13 @@ In the [Wiki](#https://github.com/peppequint/progressive-web-apps-1920/wiki/Serv
 The application is still work in progress. Things that needs to be done for the best performance and optimization:
 - [x] .env
 - [x] Manifest
-- [ ] Service worker
-- [ ] Caching
+- [x] Service worker
+- [x] Caching
+- [x] Offline availability 
 - [ ] Critical render path
-- [ ] Offline availability 
-- [ ] Progressive enhancement
-
-There are also other things that are more important to the teachers regarding the project. This can be found in the [Wiki](https://github.com/peppequint/progressive-web-apps-1920/wiki).
 
 ## Sources
 - [Football data](https://www.football-data.org/)
 - [EJS](https://ejs.co/)
 - [Icons](https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool)
+- [Async functions](https://alligator.io/js/async-functions/)
