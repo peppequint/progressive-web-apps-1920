@@ -35,7 +35,8 @@ npm install
 npm run dev
 ```
 
-### NPM scripts
+This project also uses different scripts to speed up the process of developing during the project. In the [`package.json`](https://github.com/peppequint/progressive-web-apps-1920/blob/master/package.json) file you can see what all the different scripts are.
+
 ```shell
 # Evokes different build scripts
 npm run build
