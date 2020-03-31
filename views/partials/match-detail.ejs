@@ -27,7 +27,7 @@
     <p class="match-details--name"><%= away.shortName %></p>
   </article>
   <article class="match-venue">
-    <p class="match-venue--time"><%= match.match.utcDate %></p>
+    <p class="match-venue--time"><%= new Date(match.match.utcDate) %></p>
     <p class="match-venue--stadium"><%= match.match.venue %></p>
   </article>
 </section>
@@ -36,5 +36,7 @@
   Odds
 </h2>
 <section class="match-odds">
-  <article></article>
+  <article>
+    <p>There are no odds available at the moment.</p>
+  </article>
 </section>
