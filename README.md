@@ -68,3 +68,6 @@ The application is still work in progress. Things that needs to be done for the 
 - [EJS](https://ejs.co/)
 - [Icons](https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool)
 - [Async functions](https://alligator.io/js/async-functions/)
+
+## Acknowledgment
+Big thanks to [https://github.com/decrek](https://github.com/decrek), who gave great lectures and created clear code to understand the complexity of the different subjects.
